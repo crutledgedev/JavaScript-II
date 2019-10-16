@@ -93,12 +93,18 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 //our tax accountant has indicated a problem with the tax code limiting the number of donations we are allowed to receive above $200. Generate a report with the total number
-let runnerWhales = runners.filter(function(currentValue){
+let bigDoners = runners.filter(function(currentValue){
   return currentValue.donation > 200;
 });
-console.log(runnerWhales.length);
+console.log(`the number of big doners is ${bigDoners.length}`);
 
 // Problem 2
-console.log(runnerWhales.email);
+//the directer needs names and email address list to send out thank you notes to participants 
+let mailingList = [];
+runners.forEach(function(current){
+  return mailingList.push(`${current.first_name} ${current.last_name} ${current.email}`);
+
+})
+console.log(mailingList);
 
 // Problem 3
