@@ -108,3 +108,11 @@ runners.forEach(function(current){
 console.log(mailingList);
 
 // Problem 3
+//The printers need a list of all the companies participating in this event to create a banner for the start and finish line. Create an array of company names removing all duplicates.
+const companyNames = runners.map(function(currentValue){
+  return currentValue.company_name;
+
+})
+const bannerNames = new Set(companyNames);
+console.log(bannerNames);
+//console.log(companyNames);

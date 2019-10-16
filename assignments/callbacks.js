@@ -85,8 +85,11 @@ console.log(higherOrderFunction(12, 12, multiplyNums));
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+  return cb(list.includes(item));
 
+}
+const doWeHave = contains('Notebook', items, derp => derp);
+console.log(doWeHave);
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
