@@ -4,6 +4,26 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function parent(){
+      console.log(`I am the parent and I can access my own scope`);
+      const myParents = `the parents scope`;
+      
+      function child(){
+        console.log(`I am the child and I can access my own scope and ${myParents}`);
+        const myChild = `the child scope`;
+        
+
+          function grandChild(){
+            console.log(`I am the grandChild and I can access ${myChild} and ${myParents}`);
+          
+          }//end grandChild
+         
+          grandChild();
+        }// end child
+        child();
+      }//end parent
+      parent();
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 

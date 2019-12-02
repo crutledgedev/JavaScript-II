@@ -2,9 +2,9 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
-
-  // GIVEN THIS PROBLEM:
+ 
+/*
+   //GIVEN THIS PROBLEM:
 
   function firstItem(arr, cb) {
     // firstItem passes the first item of the given array to the callback function.
@@ -39,27 +39,57 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
-function getLength(arr, cb) {
+
+
+
+
+
+
+
+
+
+
+function getLength(arr, cb) { 
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+const myLength = getLength(items, len => `this object is ${len} long`);
+console.log(myLength);
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length-1]);
+}
+const lastItem = last(items, item => `${item} is the last item on this array`);
+console.log(lastItem);
+
+//create higherOrderFunction here
+
+function higherOrderFunction(num1, num2, callback){
+  return callback(num1, num2);
 }
 
-function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+// sumNums adds two numbers (x, y) and passes the result to the callback.
+const sumNum = (x, y) =>{
+  return x + y; 
 }
+console.log(higherOrderFunction(12 , 12, sumNum));
 
-function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+ // multiplyNums multiplies two numbers and passes the result to the callback
+const multiplyNums = (x, y) => {
+      return x * y;
 }
+console.log(higherOrderFunction(12, 12, multiplyNums));
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+  return cb(list.includes(item));
 
+}
+const doWeHave = contains('Notebook', items, derp => derp);
+console.log(doWeHave);
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
